@@ -1,11 +1,3 @@
-//
-//  CalculatorTests.swift
-//  CalculatorTests
-//
-//  Created by Andrew Zures on 2/15/15.
-//  Copyright (c) 2015 Andrew Zures. All rights reserved.
-//
-
 import UIKit
 import XCTest
 

@@ -9,6 +9,7 @@ class ViewController: UIViewController
     @IBOutlet weak var display: UILabel!
     
     var currentlyTypingNumber = false
+    var operandStack = [Double]()
    
     @IBAction func appendDigit(sender: UIButton) {
         if currentlyTypingNumber{
@@ -25,36 +26,19 @@ class ViewController: UIViewController
         var result: Double?
         
         let operation = sender.currentTitle!
+        let cl = Calculator()
+        
         switch operation {
-            case "✕": (result, operandStack) = multiply(operandStack)
-            
-//            case "÷":
-//            case "－":
-//            case "+":
+            case "✕":  (result, operandStack) = cl.multiply(operandStack)
+            case "÷":  (result, operandStack) = cl.divide(operandStack)
+            case "－": (result, operandStack) = cl.subtract(operandStack)
+            case "+":  (result, operandStack) = cl.add(operandStack)
         default: break
         }
         
-        displayResults(result)
+        displayValue = result!   //this breaks right now for empty result
     }
     
-    func displayResults(result: Double?){
-        if (result? != nil) {
-            display.text = result!.description
-        } else {
-            display.text = "0"
-        }
-    }
-    
-    func multiply(var arr: [Double]) -> (Double?, [Double]){
-        if arr.count < 2 { return (nil, arr) }
-        
-        let calculated = arr.removeLast() * arr.removeLast()
-        arr.append(calculated)
-        return (calculated, arr)
-    }
-    
-    
-    var operandStack = [Double]()
     @IBAction func enter() {
         currentlyTypingNumber = false
         operandStack.append(displayValue)
