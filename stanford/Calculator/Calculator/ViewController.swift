@@ -36,7 +36,7 @@ class ViewController: UIViewController
         default: break
         }
         
-        displayValue = result!   //this breaks right now for empty result
+        displayValue = result!
     }
     
     @IBAction func enter() {
