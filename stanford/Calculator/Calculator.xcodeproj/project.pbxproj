@@ -13,6 +13,7 @@
 		76231C7E1A912EDA00964409 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76231C7D1A912EDA00964409 /* Images.xcassets */; };
 		76231C811A912EDA00964409 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76231C7F1A912EDA00964409 /* LaunchScreen.xib */; };
 		76231C8D1A912EDA00964409 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76231C8C1A912EDA00964409 /* CalculatorTests.swift */; };
+		768F57AE1AABD80500FFFA5C /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F57AD1AABD80500FFFA5C /* CalculatorBrain.swift */; };
 		76DE38041A97E61300236CEC /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DE38031A97E61300236CEC /* Calculator.swift */; };
 		76DE38061A97E70800236CEC /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DE38051A97E70800236CEC /* CalculatorTest.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		76231C861A912EDA00964409 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76231C8B1A912EDA00964409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76231C8C1A912EDA00964409 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		768F57AD1AABD80500FFFA5C /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		76DE38031A97E61300236CEC /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		76DE38051A97E70800236CEC /* CalculatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				76231C7A1A912EDA00964409 /* Main.storyboard */,
 				76DE38031A97E61300236CEC /* Calculator.swift */,
 				76231C741A912EDA00964409 /* Supporting Files */,
+				768F57AD1AABD80500FFFA5C /* CalculatorBrain.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				76DE38041A97E61300236CEC /* Calculator.swift in Sources */,
 				76231C791A912EDA00964409 /* ViewController.swift in Sources */,
+				768F57AE1AABD80500FFFA5C /* CalculatorBrain.swift in Sources */,
 				76231C771A912EDA00964409 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

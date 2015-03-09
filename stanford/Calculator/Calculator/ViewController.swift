@@ -9,6 +9,8 @@ class ViewController: UIViewController
     @IBOutlet weak var display: UILabel!
     
     var currentlyTypingNumber = false
+    var waitForNextValue = false
+    var savedOperation: String?
     var operandStack = [Double]()
    
     @IBAction func appendDigit(sender: UIButton) {
@@ -21,11 +23,20 @@ class ViewController: UIViewController
     }
     
     @IBAction func operate(sender: UIButton) {
+        var operation = sender.currentTitle!
+        
+        if(operandStack.count < 2){
+            savedOperation = operation
+        } else {
+            displayValue = _operate(operation)
+        }
+        
         if currentlyTypingNumber { enter() }
         
+    }
+    
+    func _operate(operation: String) -> Double? {
         var result: Double?
-        
-        let operation = sender.currentTitle!
         let cl = Calculator()
         
         switch operation {
@@ -33,26 +44,28 @@ class ViewController: UIViewController
             case "÷":  (result, operandStack) = cl.divide(operandStack)
             case "－": (result, operandStack) = cl.subtract(operandStack)
             case "+":  (result, operandStack) = cl.add(operandStack)
-        default: break
+            default: break
         }
         
-        displayValue = result!
+        return result
     }
     
     @IBAction func enter() {
         currentlyTypingNumber = false
-        operandStack.append(displayValue)
-        println("operand stack = \(operandStack)")
+        
+        operandStack.append(displayValue!)
+        if(savedOperation != nil){
+            displayValue = _operate(savedOperation!)
+        }
+        
+        println("operand stack= \(operandStack)")
     }
     
-    var displayValue: Double {
+    var displayValue: Double? {
         get {
             return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
         }
-        set {
-            display.text = "\(newValue)"
-            currentlyTypingNumber = false
-        }
+        set { display.text = (newValue != nil) ? "\(newValue!)" : "" }
     }
     
 }
